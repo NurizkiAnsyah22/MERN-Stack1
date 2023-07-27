@@ -19,5 +19,5 @@ Aplikasi Kontak CRUD Sederhana adalah sebuah proyek sederhana yang dibangun deng
 Ikuti langkah-langkah di bawah ini untuk menginstal aplikasi ini di komputer Anda:
 
 1. Clone repositori ini dengan perintah:
-2. git clone
+2. git clone https://github.com/NurizkiAnsyah22/MERN-Stack1.git
 
