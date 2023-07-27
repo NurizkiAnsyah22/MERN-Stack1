@@ -3,7 +3,7 @@ Buat app sederhana menggunakan teknologi MongoDB, Express JS, React JS, Node JS,
 
 # Aplikasi Kontak CRUD Sederhana dengan MERN Stack
 
-![Aplikasi Kontak CRUD Sederhana](https://skripsi.puridigital.id/persada.png)
+![Aplikasi Kontak CRUD Sederhana](https://crud.png)
 
 Aplikasi Kontak CRUD Sederhana adalah sebuah proyek sederhana yang dibangun dengan MERN Stack (MongoDB, Express, React, dan Node.js). Proyek ini memungkinkan pengguna untuk menambahkan, mengedit, dan menghapus kontak dalam daftar kontak.
 
