@@ -1,0 +1,11 @@
+<h1>Belajar expressJs</h1>
+<h2>Hallo <%= nama %></h2>
+<h3>Daftar Nama mahasiswa</h3>
+<% if (mahasiswa.length < 1) { %>
+<p>Data Mahasiswa Masih Kosong</p>
+<% } else { %> <% mahasiswa.forEach(mhs => { %>
+<ul>
+  <li>Nama : <%= mhs.nama %></li>
+  <li>email : <%= mhs.email %></li>
+</ul>
+<% } ) %> <% } %>
