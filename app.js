@@ -1,5 +1,6 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const methodOverride = require("method-override");
 const { body, check, validationResult } = require("express-validator");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -10,6 +11,9 @@ const Contact = require("./model/contact"); // ambil contact
 
 const app = express();
 const port = 3000;
+
+//setup method override
+app.use(methodOverride("_method"));
 
 //setupEjs
 app.set("view engine", "ejs");
@@ -120,6 +124,41 @@ app.post("/contact", [
     }
   },
 ]);
+
+// //proses delete data
+// app.get("/contact/delete/:nama", async (req, res) => {
+//   try {
+//     const contact = await Contact.findOne({ nama: req.params.nama });
+//     if (!contact) {
+//       res.status(404).send("erro 404!");
+//     } else {
+//       await Contact.deleteOne({ _id: contact._id });
+//       req.flash("msg", "data berhasil di hapus!");
+//       res.redirect("/contact");
+//     }
+//   } catch (error) {
+//     console.log("terjadi keslahan saat mengahpus data contact:", error);
+//     res.status(500).send("terjadi keslahan saat mengapus data contact");
+//   }
+// });
+
+//proses delete data metode baru
+app.delete("/contact", (req, res) => {
+  Contact.deleteOne({ nama: req.body.nama }).then((result) => {
+    req.flash("msg", "data contact berhasil di hapus!");
+    res.redirect("/contact");
+  });
+});
+
+//form edit data
+// app.get("contact/edit/:nama", async (req, res) => {
+//   const contact = await findOne({ nama: req.params.nama });
+//   res.render("edit-contact", {
+//     title: "ubah data contact",
+//     layout: "layouts/main-layout",
+//     contact: contact,
+//   });
+// });
 
 //halaman detail contact
 app.get("/contact/:nama", async (req, res) => {

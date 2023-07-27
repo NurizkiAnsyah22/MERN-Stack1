@@ -17,6 +17,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
+    "method-override": "^3.0.0",
     "mongoose": "^7.4.1"
   }
 }
